@@ -4,6 +4,13 @@ module.exports = plugin(function({ addUtilities, theme, variants }) {
   const stackTokens = theme("stack");
   const stackVariants = variants("stack", []);
 
+  if (!stackTokens) {
+    console.warn(
+      'Please add a "stack" key to your Tailwind config (under "theme") in order to use tailwind-stack-plugin'
+    );
+    return;
+  }
+
   Object.keys(stackTokens).forEach(token => {
     const spacingValue = stackTokens[token];
 
@@ -19,8 +26,7 @@ module.exports = plugin(function({ addUtilities, theme, variants }) {
         justifyContent: "flex-start"
       },
       [resetClass]: {
-        marginTop: 0,
-        marginBottom: 0
+        margin: 0
       },
       [spacingClass]: {
         marginTop: spacingValue
@@ -39,8 +45,7 @@ module.exports = plugin(function({ addUtilities, theme, variants }) {
         justifyContent: "flex-start"
       },
       [inlineResetClass]: {
-        marginLeft: 0,
-        marginRight: 0
+        margin: 0
       },
       [inlineSpacingClass]: {
         marginLeft: spacingValue
