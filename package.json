@@ -1,0 +1,19 @@
+{
+  "name": "tailwind-stack-plugin",
+  "version": "0.0.0",
+  "description": "A Tailwind plugin for custom \"stack\" utility classes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tailwindcss",
+    "stack",
+    "css"
+  ],
+  "author": "@mattrothenberg",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^1.2.0"
+  }
+}
