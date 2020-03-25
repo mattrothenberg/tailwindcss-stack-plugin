@@ -46,12 +46,11 @@ module.exports = plugin(function({ addUtilities, theme }) {
       }
     };
 
-    addUtilities(
-      {
-        ...verticalClasses,
-        ...inlineClasses
-      },
-      ["responsive"]
-    );
+    console.log("********");
+    console.log(inlineClasses);
+    console.log("********");
+
+    addUtilities(verticalClasses, ["responsive"]);
+    addUtilities(inlineClasses, ["responsive"]);
   });
 });
