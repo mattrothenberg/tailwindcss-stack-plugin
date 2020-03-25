@@ -33,7 +33,7 @@ module.exports = {
 };
 ```
 
-## Usage
+## Usage (Vertical)
 
 ```html
 <div class="stack-sm">
@@ -50,6 +50,26 @@ module.exports = {
 ```
 
 <img width="806" alt="Screen Shot 2020-03-25 at 10 31 29 AM" src="https://user-images.githubusercontent.com/5148596/77547647-d87c0900-6e83-11ea-95b1-2b27d225b38e.png">
+
+## Usage (Inline)
+
+```html
+<div class="stack-sm">
+  <h1 class="tracking-tight text-white text-lg font-bold">
+    Inline Stack
+  </h1>
+  <div
+    class="stack-inline-sm md:stack-inline-md lg:stack-inline-lg xl:stack-inline-xl"
+  >
+    <div class="border-2 border-white p-4"></div>
+    <div class="border-2 border-white p-4"></div>
+    <div class="border-2 border-white p-4"></div>
+    <div class="border-2 border-white p-4"></div>
+  </div>
+</div>
+```
+
+<img width="456" alt="Screen Shot 2020-03-25 at 10 36 18 AM" src="https://user-images.githubusercontent.com/5148596/77548109-78399700-6e84-11ea-836b-cbc1fe23d9e5.png">
 
 
 ---
