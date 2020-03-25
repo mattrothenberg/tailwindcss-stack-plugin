@@ -4,12 +4,14 @@ module.exports = plugin(function({ addUtilities, theme }) {
   const stackTokens = theme("stack");
 
   Object.keys(stackTokens).forEach(token => {
+    const spacingValue = stackTokens[token];
+
+    // Vertical Classes
     const baseStackClass = `.stack-${token}`;
     const resetClass = `${baseStackClass} > *`;
     const spacingClass = `${baseStackClass} > * + *`;
-    const spacingValue = stackTokens[token];
 
-    const stackClassMap = {
+    const verticalClasses = {
       [baseStackClass]: {
         display: "flex",
         flexDirection: "column",
@@ -24,6 +26,32 @@ module.exports = plugin(function({ addUtilities, theme }) {
       }
     };
 
-    addUtilities(stackClassMap, ["responsive"]);
+    // Inline Classes
+    const inlineBaseStackClass = `.stack-inline-${token}`;
+    const inlineResetClass = `${inlineBaseStackClass} > *`;
+    const inlineSpacingClass = `${inlineBaseStackClass} > * + *`;
+
+    const inlineClasses = {
+      [inlineBaseStackClass]: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "flex-start"
+      },
+      [inlineResetClass]: {
+        marginLeft: 0,
+        marginRight: 0
+      },
+      [inlineSpacingClass]: {
+        marginLeft: spacingValue
+      }
+    };
+
+    addUtilities(
+      {
+        ...verticalClasses,
+        ...inlineClasses
+      },
+      ["responsive"]
+    );
   });
 });
