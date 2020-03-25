@@ -47,6 +47,6 @@ module.exports = plugin(function({ addUtilities, theme, variants }) {
       }
     };
 
-    addUtilities({ ...verticalClasses, ...inlineClasses }, gradientVariants);
+    addUtilities({ ...verticalClasses, ...inlineClasses }, stackVariants);
   });
 });
