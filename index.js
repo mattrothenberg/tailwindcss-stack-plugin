@@ -1,7 +1,8 @@
 const plugin = require("tailwindcss/plugin");
 
-module.exports = plugin(function({ addUtilities, theme }) {
+module.exports = plugin(function({ addUtilities, theme, variants }) {
   const stackTokens = theme("stack");
+  const stackVariants = variants("stack", []);
 
   Object.keys(stackTokens).forEach(token => {
     const spacingValue = stackTokens[token];
@@ -46,11 +47,6 @@ module.exports = plugin(function({ addUtilities, theme }) {
       }
     };
 
-    console.log("********");
-    console.log(inlineClasses);
-    console.log("********");
-
-    addUtilities(verticalClasses, ["responsive"]);
-    addUtilities(inlineClasses, ["responsive"]);
+    addUtilities({ ...verticalClasses, ...inlineClasses }, gradientVariants);
   });
 });
