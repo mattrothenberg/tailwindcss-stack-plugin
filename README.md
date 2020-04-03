@@ -6,7 +6,7 @@ A Tailwind plugin for custom "stack" utility classes.<sup>1</sup>
 ## Installation
 
 ```bash
-yarn add tailwindcss-stack-plugin --dev
+yarn add tailwind-stack-plugin --dev
 ```
 
 ## Tailwind Configuration
